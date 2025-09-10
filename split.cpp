@@ -18,6 +18,42 @@ void split(Node*& in, Node*& odds, Node*& evens)
 {
   /* Add code here */
 // WRITE YOUR CODE HERE
+  if (in == nullptr){
+    return;
+  }
+  Node* starting = in;
+  //Node* nex=
+  Node* nex = starting->next;
+  starting->next = nullptr;
+  in=nex;
+
+//for only 1 item
+  if (starting->value % 2==0 && nex==nullptr){
+    //tracking the oldhead
+    Node* oldStartingHead = evens;
+    starting->next=evens;
+    //newhead
+    evens = starting;
+    
+  }
+  else{
+    //tracking oldhead
+    Node* oldStartingHead = odds;
+    starting->next=odds;
+    //newhead
+    odds=starting;
+  }
+  if (starting->value % 2==0){
+    Node*oldStartingHead = evens;
+    starting->next = evens;
+    evens=starting;
+  }
+  else{
+    Node* oldStartingHead = odds;
+    starting->next = odds;
+    odds=starting;
+  }
+  split(in,odds,evens);
 }
 
 /* If you needed a helper function, write it here */
