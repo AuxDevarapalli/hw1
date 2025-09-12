@@ -34,15 +34,10 @@ void split(Node*& in, Node*& odds, Node*& evens)
     starting->next=evens;
     //newhead
     evens = starting;
-    
+    return;
   }
-  else{
-    //tracking oldhead
-    Node* oldStartingHead = odds;
-    starting->next=odds;
-    //newhead
-    odds=starting;
-  }
+
+  //multiple items
   if (starting->value % 2==0){
     Node*oldStartingHead = evens;
     starting->next = evens;

@@ -9,5 +9,10 @@
 
 int main(int argc, char* argv[])
 {
-
+  //from instructions
+  ULListStr newList;
+  newList.push_back("7");
+  newList.push_front("1");
+  newList.push_back("4");
+  std::cout<<newList.get(0)<<" "<<newList.get(1)<<" "<<newList.get(2)<<std::endl;
 }
