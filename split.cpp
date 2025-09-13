@@ -22,7 +22,6 @@ void split(Node*& in, Node*& odds, Node*& evens)
     return;
   }
   Node* starting = in;
-  //Node* nex=
   Node* nex = starting->next;
   starting->next = nullptr;
   in=nex;
@@ -32,7 +31,6 @@ void split(Node*& in, Node*& odds, Node*& evens)
     //tracking the oldhead
     Node* oldStartingHead = evens;
     starting->next=evens;
-    //newhead
     evens = starting;
     return;
   }
@@ -43,6 +41,7 @@ void split(Node*& in, Node*& odds, Node*& evens)
     starting->next = evens;
     evens=starting;
   }
+  //oddcase
   else{
     Node* oldStartingHead = odds;
     starting->next = odds;

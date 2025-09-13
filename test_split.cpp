@@ -15,12 +15,14 @@ g++ split.cpp test_split.cpp -o test_split
 int main(int argc, char* argv[])
 {
   Node first(2,nullptr);
+  Node second(4,&first);
+  Node third (4,&second);
   //Node* second;
   //second->value = 3;
   //second->next = nullptr;
   //first.value = 2;
   //first.next = nullptr;
-
+  //instructions said no loops 
   Node* in = &first;
   Node* odds = nullptr;
   Node* evens = nullptr;

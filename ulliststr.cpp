@@ -79,7 +79,7 @@ void ULListStr::pop_back(){
       size_--;
       return;
     }
-    //when there are 2 nodes?
+    //when there are 2 nodes
     Item* temp = tail_;
     if(head_==tail_->prev){
       //head_=tail_;
@@ -95,7 +95,7 @@ void ULListStr::pop_back(){
   size_--;
 }
 void ULListStr::push_front(const std::string& val){
-  //empty so if size=0, then etc. not size=arrsize-1 - no value
+  //empty. so if size=0, then etc. not size=arrsize-1 - no value
   if (size_==0){
     Item* ender = new Item();
     ender->val[0] = val;
@@ -117,10 +117,10 @@ void ULListStr::push_front(const std::string& val){
     newStart->val[ARRSIZE-1]=val; //9 - 10-1 (arrsize = 10)
     newStart->first = ARRSIZE-1; //changed from 0 to that, TA said no hardcoding
     newStart->last = ARRSIZE; // TA said no hard coding
-    size_++;// will i lose points for hardcoding?
+    size_++;
     return;
   }
-  //there is room 
+  //there is space 
   head_->first -=1;
   head_->val[head_->first]=val;
   size_++;
@@ -137,9 +137,6 @@ void ULListStr::pop_front(){
   }
   //indication that node is empty
   if(head_->first==head_->last){
-    
-    //head_->next->prev=nullptr;
-    //head_->
     Item* tempHead = head_;
     if(head_==tail_){
       delete tempHead;
@@ -147,8 +144,6 @@ void ULListStr::pop_front(){
       tail_=nullptr;
       size_-=1;
       return;
-      //tail_->next=nullptr;
-      //head_->prev=nullptr;
     }
     else{
       head_=head_->next;
@@ -186,9 +181,6 @@ std::string* ULListStr::getValAtLoc(size_t loc) const{//confused
     temp=temp->next;
   }
   return NULL;
-  //return found;
-  //iterate through each node and the val[]
-  // do i assume each node is full and then do like 40/10=4?
 
 }
 
